@@ -3,8 +3,8 @@ import * as flightsCtrl from '../controllers/flights.js'
 
 const router = Router()
 
-/* GET users listing. */
-router.get('/', flightsCtrl.index)
+// GET -localhost:3000/movies/new
+router.get('/new', flightsCtrl.new)
 
 //function(req, res) {
 //res.send('respond with a resource')
