@@ -7,21 +7,26 @@ const flightSchema = new Schema({
   airline: {
     type: String,
     enum: ["American", "Southwest", "United"]
+    
   },
   airport: {
     type: String,
     enum: ["AUS", "DFW", "DEN", "LAX", "SAN"],
     default: "DEN"
   },
+
   flightNo: {
     type: Number,
+    default: function() {
+      return new Date().getFullYear()
+    },
     min: 10,
-    max: 9999,
-    required: true
+    max: 9999
   },
+
   departs: {
     type: Date,
-    default: Date.now() + 365 * 24 * 60 * 6000
+    default: Date.now() + 365*24*60*60000,
   }
 })
 
