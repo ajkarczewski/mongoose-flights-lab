@@ -1,41 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
-</head>
-<body>
-  <h1>Add a New Flight!</h1>
-  <form action="/flights" method="POST">
-    <label>Airline:
-      <select name="airline">
-        <option value="American">American</option>
-        <option value="Southwest">Southwest</option>
-        <option value="United">United</option>
-      </select>
-      <label>Airport:
-        <select name="airport">
-          <option value="AUS">AUS</option>
-          <option value="DFW">DFW</option>
-          <option value="DEN">DEN</option>
-          <option value="LAX">LAX</option>
-          <option value="SAN">SAN</option>
-        </select>
-    </label><br>
-    <label>Flight Number:
-      <input type="number" name="flightNo">
-    </label><br>
-    <label>Departure:
-      <input type="date" name="departs">
-    </label><br>
-    <button type="submit">Add Flight</button>
-  </form>
-</body>
-</html>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,32 +8,27 @@
   <title>Mongoose Movies</title>
 </head>
 <body>
-  <h1>Movie List</h1>
+  <h1>Flight List</h1>
   <table>
     <thead>
       <tr>
-        <th>Title</th>
-        <th>Release Year</th>
-        <th>Rating</th>
-        <th>Cast</th>
-        <th>Now Showing</th>
+        <th>Airline</th>
+        <th>Airport</th>
+        <th>FlightNo</th>
+        <th>Departs</th>
       </tr>
-    </thead> -->
-    
+    </thead>
     <tbody>
       <%# Oh hey, this is an ejs comment! It starts with a # %>
-      <% flights.forEach(element => { %>
-       
-      <% }) %>
+      <% flights.forEach(flight => { %>
         <tr>
-          <td><%= movie.title %></td>
-          <td><%= movie.releaseYear %></td>
-          <td><%= movie.mpaaRating %></td>
-          <td><%= movie.cast.join(', ') %></td>
-          <%# finish the ternary expression to display 'Yes' or 'Nope' %> 
-          <td><%= movie.nowShowing ?  %></td>
+          <td><%= flight.airline %></td>
+          <td><%= flight.airport %></td>
+          <td><%= flight.flightNo %></td>
+          <td><%= flight.departs%></td>
+          <% %> 
         </tr>
-      <%# Close the forEach using EJS here %>
+      <% }) %>
     </tbody>
   </table>
 </body>
